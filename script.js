@@ -43,3 +43,33 @@ function myFunction() {
 
     setTimeout(resetPositions, 2000); 
 }
+
+
+// popup every 5 seconds
+function showPopup() {
+    // Display the popup
+    document.getElementById("popup").style.display = "block";
+}
+
+function closePopup() {
+    // Hide the popup when the close button is clicked
+    document.getElementById("popup").style.display = "none";
+}
+
+// Show the popup every 2 seconds
+setInterval(showPopup, 5000);
+
+function showPopup() {
+    var popup = document.getElementById("popup");
+    
+    // Calculate random positions
+    var randomTop = Math.floor(Math.random() * (window.innerHeight - popup.clientHeight));
+    var randomLeft = Math.floor(Math.random() * (window.innerWidth - popup.clientWidth));
+
+    // Set the top and left styles
+    popup.style.top = randomTop + "px";
+    popup.style.left = randomLeft + "px";
+
+    // Display the popup
+    popup.style.display = "block";
+}

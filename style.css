@@ -1,0 +1,315 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 10vw 10vw 10vw 20vw 50vw;
+    grid-template-rows: 10vh 80vh 10vh;
+}
+
+.grid-item {
+    background-color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.item1, .item3, .item4 {
+    grid-column: 1 / span 4;
+    text-align: left;
+}
+
+.item1 {
+    grid-row: 1;
+}
+
+.item2 {
+    grid-column: 5;
+    grid-row: 1 / span 3;
+    background-color: #C52146;
+}
+
+.item2:hover {
+    grid-column: 5;
+    grid-row: 1 / span 3;
+    animation: bounce-left 0.00001s infinite, hue 1s alternate infinite;
+    background: linear-gradient(90deg, hsla(57, 98%, 50%, 1) 0%, hsla(325, 69%, 56%, 1) 100%);
+}
+@keyframes bounce-left {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(-200%);
+    }
+}
+  
+@keyframes hue {
+    to {
+      filter: hue-rotate(1turn);
+    }
+}
+
+#appel {
+    height: auto;
+    width: 50%;
+}
+
+#appel:hover {
+    height: auto;
+    width: 50%;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
+}
+
+.item3 {
+    grid-row: 2;
+    margin-left: 12%;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #C52146;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    grid-column: 2 / span 4;
+}
+
+.popup:hover {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #C52146;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    animation: bounce-left-right 2s infinite;
+}
+@keyframes bounce-left-right {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(1200px);
+    }
+}
+  
+.popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+  
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0s;
+    animation: fadeIn 0.0001s;
+}
+  
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+  
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+h4 {
+    font-size: 2.5vw;
+}
+
+p {
+    font-size: 1.5vw;
+    grid-row: 2;
+}
+
+#p2 {
+    font-size: 0.8vw;
+    color: grey;
+}
+.logo {
+    width: 3.8vw;
+    height: auto;
+}
+
+.logo:hover {
+    animation-name: spin;
+    animation-duration: 1ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+#knop {
+    width: 10vw;
+    position: relative;
+    top: 0;
+    transition: top 0.3s ease-in-out;
+}
+
+#knop2 {
+    width: 10vw;
+    position: relative;
+    top: 0;
+    transition: top 0.3s ease-in-out;
+}
+
+.item4 {
+    grid-row: 3;
+}
+
+@media only screen and (max-width:766px){
+    .grid-container {
+        grid-template-columns: 10vw 60vw 30vw;
+        grid-template-rows: 5vh 95vh;
+    }
+
+    .logo {
+        width: 10vw;
+    }
+
+    #knop {
+        width: 30vw;
+    }
+
+    #knop2 {
+        width: 30vw;
+    }
+
+    h4 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.6rem;
+    }
+
+    #p2 {
+        font-size: 1rem;
+    }
+
+    .item2 {
+        display: none;
+    }
+
+    #appel {
+        display: none;
+    }
+
+    .item4 {
+        display: none;
+    }
+}
+
+
+@media only screen and (min-width: 767px) and (max-width: 1025px) {
+    .grid-container {
+        grid-template-rows: 10vh 70vh 20vh;
+    }
+
+    .grid-item {
+        font-size: 4vw;
+    }
+
+    h4 {
+        font-size: 3rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    #p2 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        width: 5vw;
+    }
+
+    #knop {
+        width: 15vw;
+    }
+
+    #knop2 {
+        width: 15vw;
+    }
+
+    .item4 {
+        display: none;
+    }
+
+    #appel {
+        grid-row: 3;
+        margin-top: 92%;
+    }
+    
+    .item2:hover {
+    grid-column: 5;
+    grid-row: 1 / span 3;
+    animation: bounce-left-right 3s infinite, hue 1s alternate infinite;
+    background: linear-gradient(90deg, hsla(57, 98%, 50%, 1) 0%, hsla(325, 69%, 56%, 1) 100%);
+    }
+    @keyframes bounce-left-right {
+        0%, 100% {
+        transform: translateX(0);
+        }
+        50% {
+        transform: translateX(-200%);
+        }
+    }
+  
+    @keyframes hue {
+        to {
+        filter: hue-rotate(1turn);
+        }
+    }
+}
